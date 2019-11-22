@@ -1,0 +1,12 @@
+project: valar
+function: cli
+environment:
+  name: golang
+ignore:
+- .valar.yml
+- .git
+- node_modules
+- LICENSE
+- README.md
+resources:
+- install.sh
