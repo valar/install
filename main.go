@@ -29,7 +29,7 @@ if [ ! -f "$HOME/.valar/valar.cloud.yml" ]; then
     read -s API_TOKEN
     cat - > $HOME/.valar/valar.cloud.yml <<EOF
 token: $API_TOKEN
-endpoint: https://api.valar.dev
+endpoint: https://api.valar.dev/v0
 EOF
 fi
 
