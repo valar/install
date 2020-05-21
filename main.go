@@ -26,7 +26,7 @@ fi
 
 sudo chmod +x /usr/local/bin/valar
 
-if [ ! -f "$HOME/.valar/valar.cloud.yml" ]; then
+if [ ! -f "$HOME/.valar/valar.yml" ]; then
     echo "Configuring Valar Cloud ..."
     mkdir -p $HOME/.valar
     printf "Token: "
