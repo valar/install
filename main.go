@@ -26,14 +26,14 @@ fi
 
 sudo chmod +x /usr/local/bin/valar
 
-if [ ! -f "$HOME/.valar/valar.yml" ]; then
-    echo "Configuring Valar Cloud ..."
+if [ ! -f "$HOME/.valar/valarcfg" ]; then
+    echo "Configuring Valar ..."
     mkdir -p $HOME/.valar
     printf "Token: "
     read -s API_TOKEN
-    cat - > $HOME/.valar/valar.cloud.yml <<EOF
+    cat - > $HOME/.valar/valarcfg <<EOF
 token: $API_TOKEN
-endpoint: https://api.valar.dev/v0
+endpoint: https://api.valar.dev/v1
 EOF
 fi
 
