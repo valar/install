@@ -8,8 +8,12 @@ os=$(uname -s)
 
 if [ "$os" == "Darwin" ] && [ "$arch" == "x86_64" ]; then
     sudo curl -sSL -o /usr/local/bin/valar https://github.com/valar/cli/releases/latest/download/valar_darwin_amd64
+elif [ "$os" == "Darwin" ] && [ "$arch" == "arm64" ]; then
+    sudo curl -sSL -o /usr/local/bin/valar https://github.com/valar/cli/releases/latest/download/valar_darwin_arm64
 elif [ "$os" == "Linux" ] && [ "$arch" == "x86_64" ]; then
     sudo curl -sSL -o /usr/local/bin/valar https://github.com/valar/cli/releases/latest/download/valar_linux_amd64
+elif [ "$os" == "Linux" ] && [ "$arch" == "arm64" ]; then
+    sudo curl -sSL -o /usr/local/bin/valar https://github.com/valar/cli/releases/latest/download/valar_linux_arm64
 elif [ "$os" == "Linux" ] && [ "${arch:0:3}" == "arm" ]; then
     sudo curl -sSL -o /usr/local/bin/valar https://github.com/valar/cli/releases/latest/download/valar_linux_arm
 else
