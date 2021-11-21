@@ -1,6 +1,12 @@
 project: valar
 service: cli
-constructor: golang
-ignore:
-- .valar.yml
-- .git
+build:
+    constructor: go
+    ignore:
+        - .valar.yml
+        - .git
+        - node_modules
+    environment: []
+deployment:
+    skip: false
+    environment: []
