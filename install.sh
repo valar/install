@@ -22,15 +22,9 @@ fi
 
 sudo chmod +x /usr/local/bin/valar
 
-if [ ! -f "$HOME/.valar/valarcfg" ]; then
-    echo "Configuring Valar ..."
-    mkdir -p $HOME/.valar
-    printf "Token: "
-    read -s API_TOKEN
-    cat - > $HOME/.valar/valarcfg <<EOF
-token: $API_TOKEN
-endpoint: https://api.valar.dev/v1
-EOF
+if [ ! -f "$HOME/.valar/config" ]; then
+    echo "You seem to be missing a valid configuration."
+    echo "Head to https://docs.valar.dev/ to get started."
 fi
 
 # Report install finish
