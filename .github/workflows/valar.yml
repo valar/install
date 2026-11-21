@@ -1,13 +1,24 @@
-name: "Publish to Valar"
+name: Deploy to Valar
 on:
   push:
-    branches:    
-      - master
+    branches: [master]
+
+concurrency:
+  group: valar-deploy
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
 jobs:
-  publish:
+  deploy:
     runs-on: ubuntu-latest
+    environment:
+      name: production
+      url: ${{ steps.valar.outputs.url }}
     steps:
-    - uses: actions/checkout@v1
-    - uses: valar/action@v2
-      with:
-        token: ${{ secrets.VALAR_TOKEN }}
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - id: valar
+        uses: valar/action@2389c1c61ba96927675f91b34fe4f8829f6f658a # v3.0.0
+        with:
+          token: ${{ secrets.VALAR_TOKEN }}
